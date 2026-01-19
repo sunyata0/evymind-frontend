@@ -81,6 +81,19 @@
   ================================ */
   --text-2xs: 0.625rem;
   --text-10xl: 10rem;
+
+  --animate-tab-enter: tabEnter 300ms ease-out;
+
+  @keyframes tabEnter {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .dark {
@@ -117,6 +130,7 @@ html {
 
 /* Remove default body margin */
 body {
+  @apply bg-bg;
   margin: 0;
 }
 
@@ -128,14 +142,6 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
-}
-
-/* Form elements inherit typography */
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 /* Remove tap highlight on mobile */

@@ -45,7 +45,7 @@ const FEATURES = [
 
 export const Ownership = () => {
   return (
-    <div class="relative">
+    <div id="ownership" class="relative">
       <CyanMeshBackground />
 
       <section id="ownership" class="text-text-primary relative bg-transparent">

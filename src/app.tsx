@@ -4,7 +4,7 @@ import { useThemeStore } from "@/stores/theme";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { CoreBenefits } from "@/components/CoreBenefits";
-import { Videos } from "@/components/Videos";
+// import { Videos } from "@/components/Videos";
 import { Ownership } from "./components/Ownership";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -25,7 +25,7 @@ export function App() {
         <Navbar />
         <Hero />
         <CoreBenefits />
-        <Videos />
+        {/* <Videos /> */}
         <Ownership />
         <Contact />
         <Footer />

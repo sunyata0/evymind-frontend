@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import { FiCheck } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
-
+import { motion, AnimatePresence } from "framer-motion";
 import StructuredAiVisual from "@/assets/images/structured-ai-visual.png";
 
 type Tab = {
@@ -139,7 +139,6 @@ export const CoreBenefitsTabs = () => {
       {/* Text block */}
       <div class="border-primary/40 bg-surface/30 rounded-2xl border p-8 backdrop-blur">
         {/* Tabs */}
-        {/* Tabs */}
         <div class="mb-6">
           <div class="flex items-center gap-6 text-sm font-medium whitespace-nowrap">
             {TABS.map((t) => (
@@ -148,7 +147,7 @@ export const CoreBenefitsTabs = () => {
                 type="button"
                 onClick={() => setActiveTab(t.id)}
                 class={[
-                  "relative pb-1 transition-colors",
+                  "relative cursor-pointer pb-1 transition-colors",
                   activeTab === t.id ? "text-primary" : "text-text-muted hover:text-text-primary",
                 ].join(" ")}
               >
@@ -162,16 +161,26 @@ export const CoreBenefitsTabs = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <h3 class="text-primary mb-2 text-lg font-semibold">{tab.title}</h3>
+        {/* Animated Content */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <h3 class="text-primary mb-2 text-lg font-semibold">{tab.title}</h3>
 
-        <p class="text-text-secondary mb-6 text-sm leading-relaxed">{tab.description}</p>
+            <p class="text-text-secondary mb-6 text-sm leading-relaxed">{tab.description}</p>
 
-        <ul class="text-text-secondary space-y-3 text-sm">
-          {tab.bullets.map((item) => (
-            <li key={item}>• {item}</li>
-          ))}
-        </ul>
+            <ul class="text-text-secondary space-y-3 text-sm">
+              {tab.bullets.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Visual */}

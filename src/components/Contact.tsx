@@ -23,7 +23,7 @@ export const Contact = () => {
           <div class="flex justify-center pt-4">
             <button
               type="submit"
-              class="bg-primary focus-visible:ring-primary inline-flex items-center justify-center rounded-xl px-8 py-3 text-sm font-semibold text-black shadow-[0_0_0_1px_rgba(209,255,0,0.6),0_14px_40px_rgba(209,255,0,0.22)] transition hover:-translate-y-px hover:shadow-[0_0_0_1px_rgba(209,255,0,0.8),0_20px_55px_rgba(209,255,0,0.28)] focus-visible:ring-2 focus-visible:outline-none"
+              class="bg-primary inline-flex cursor-pointer items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-black shadow-[0_0_0_1px_rgba(209,255,0,0.6),0_14px_40px_rgba(209,255,0,0.22)] transition hover:-translate-y-px hover:shadow-[0_0_0_1px_rgba(209,255,0,0.8),0_20px_55px_rgba(209,255,0,0.28)]"
             >
               Send message
             </button>

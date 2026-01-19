@@ -1,0 +1,1 @@
+export const DISCORD_URL = "https://discord.gg/2H3qKpg8";

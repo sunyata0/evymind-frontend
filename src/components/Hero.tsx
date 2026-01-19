@@ -1,15 +1,15 @@
 import { FaDiscord } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
-import { FiPlay } from "react-icons/fi";
-
 import UnityIcon from "@/assets/logos/unity-logo.png";
+import Video from "@/assets/videos/hero.mp4";
+import { DISCORD_URL } from "@/common/global_variables";
 
 export const Hero = () => {
   return (
     <section id="top" class="relative isolate">
       <HeroBackground />
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="pt-16 sm:pt-20">
+        <div class="pt-48 sm:pt-52">
           <div class="mx-auto max-w-3xl text-center">
             <h1 class="text-4xl font-extrabold tracking-tight text-balance sm:text-6xl">
               Build Features at LLM Speed
@@ -36,7 +36,9 @@ export const Hero = () => {
               </a>
 
               <a
-                href="#discord"
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="border-primary text-primary hover:bg-primary-soft inline-flex items-center gap-2 rounded-xl border px-5 py-3 text-sm font-semibold transition"
               >
                 <FaDiscord class="h-4 w-4" aria-hidden />
@@ -47,17 +49,21 @@ export const Hero = () => {
           </div>
 
           {/* Video */}
+          {/* Video */}
           <div class="mx-auto mt-10 max-w-5xl pb-20 sm:mt-12">
             <div class="border-primary/50 bg-surface-elevated/40 relative overflow-hidden rounded-2xl border shadow-[0_0_0_1px_rgba(209,255,0,0.22),0_30px_90px_rgba(0,0,0,0.55)] backdrop-blur">
-              <div class="aspect-video w-full" />
-
-              <button
-                type="button"
-                aria-label="Play demo video"
-                class="border-primary/70 absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border bg-black/40 backdrop-blur transition hover:bg-black/50"
-              >
-                <FiPlay class="text-primary h-6 w-6 translate-x-px" />
-              </button>
+              <div class="relative aspect-video w-full">
+                <video
+                  src={Video}
+                  class="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  controls
+                />
+              </div>
             </div>
 
             <p class="text-text-muted mt-4 text-center text-xs">
