@@ -1,4 +1,4 @@
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 import { Providers } from "@/providers/Providers";
 import { useThemeStore } from "@/stores/theme";
 import { Hero } from "@/components/Hero";
@@ -20,8 +20,7 @@ export function App() {
 
   return (
     <Providers>
-      {/* ⬇️ THIS is the fix */}
-      <div class="relative isolate min-h-screen bg-bg text-text-primary overflow-x-hidden">
+      <div class="bg-bg text-text-primary relative isolate min-h-screen overflow-x-hidden">
         <Navbar />
         <Hero />
         <CoreBenefits />
@@ -30,19 +29,7 @@ export function App() {
         <Contact />
         <Footer />
 
-        <Toaster
-          position="bottom-center"
-          reverseOrder={false}
-          toastOptions={{
-            style: {
-              background: resolvedTheme === "light" ? "#f8f9fc" : "#161618",
-              color: resolvedTheme === "light" ? "#0f172a" : "#f4f4f5",
-              fontFamily: "Inter",
-              fontSize: 12,
-            },
-            duration: 3000,
-          }}
-        />
+        <Toaster theme={resolvedTheme} />
       </div>
     </Providers>
   );
